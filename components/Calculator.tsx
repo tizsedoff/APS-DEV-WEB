@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 const projectOptions = [
   { id: 'pymes', label: 'PyME', value: 800 },
@@ -42,6 +42,44 @@ export function Calculator() {
       current.includes(extraId) ? current.filter((item) => item !== extraId) : [...current, extraId]
     );
   };
+
+  useEffect(() => {
+    const savedValue = window.localStorage.getItem('aps-dev-web-calculator');
+
+    if (!savedValue) {
+      return;
+    }
+
+    try {
+      const parsed = JSON.parse(savedValue) as {
+        projectType?: string;
+        selectedExtras?: string[];
+      };
+
+      if (parsed.projectType && projectOptions.some((option) => option.id === parsed.projectType)) {
+        setProjectType(parsed.projectType);
+      }
+
+      if (Array.isArray(parsed.selectedExtras)) {
+        const validExtras = parsed.selectedExtras.filter((extraId) => extras.some((item) => item.id === extraId));
+        setSelectedExtras(validExtras);
+      }
+    } catch {
+      // ignore invalid stored state
+    }
+  }, []);
+
+  useEffect(() => {
+    const state = {
+      projectType,
+      selectedExtras,
+      projectLabel: selectedProject.label,
+      extrasLabels: extras.filter((item) => selectedExtras.includes(item.id)).map((item) => item.label),
+      total,
+    };
+
+    window.localStorage.setItem('aps-dev-web-calculator', JSON.stringify(state));
+  }, [projectType, selectedExtras, selectedProject.label, total]);
 
   return (
     <motion.div

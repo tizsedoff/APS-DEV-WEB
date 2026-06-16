@@ -18,7 +18,7 @@ interface ChatMessage {
   };
 }
 
-const WA_LINK = 'https://wa.me/543755528367?text=Hola%20APS%20Developer%2C%20quiero%20recibir%20informaci%C3%B3n%20sobre%20un%20proyecto.';
+const WA_LINK = 'https://wa.me/543755301413?text=Hola%20APS%20Developer%2C%20quiero%20recibir%20informaci%C3%B3n%20sobre%20un%20proyecto.';
 
 const defaultMessages: ChatMessage[] = [
   {

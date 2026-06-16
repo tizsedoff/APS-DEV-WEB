@@ -140,7 +140,7 @@ export default function Home() {
                 Solicitar Presupuesto
               </a>
               <a
-                href="https://wa.me/543755528367?text=Hola%20APS%20Developer%2C%20quiero%20recibir%20informaci%C3%B3n%20sobre%20un%20proyecto."
+                href="https://wa.me/543755301413?text=Hola%20APS%20Developer%2C%20quiero%20recibir%20informaci%C3%B3n%20sobre%20un%20proyecto."
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center rounded-3xl border border-white/10 bg-white/5 px-6 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:border-orange-400/40 hover:text-orange-400"
@@ -308,8 +308,8 @@ export default function Home() {
                 <div>
                   <p className="font-semibold text-white">WhatsApp</p>
                   <p>
-                    <a href="https://wa.me/543755528367?text=Hola%20APS%20Developer%2C%20quiero%20hablar%20de%20un%20proyecto." target="_blank" rel="noreferrer" className="text-orange-300 hover:text-orange-400">
-                      +54 9 3755 528367
+                    <a href="https://wa.me/543755301413?text=Hola%20APS%20Developer%2C%20quiero%20hablar%20de%20un%20proyecto." target="_blank" rel="noreferrer" className="text-orange-300 hover:text-orange-400">
+                      +54 9 3755 301413
                     </a>
                   </p>
                 </div>
@@ -351,7 +351,7 @@ export default function Home() {
         <div className="mt-8 flex flex-col gap-4 border-t border-white/10 pt-6 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
           <span>© {new Date().getFullYear()} APS Developer. Todos los derechos reservados.</span>
           <div className="flex items-center gap-4">
-            <a href="https://wa.me/543755528367" target="_blank" rel="noreferrer" className="transition hover:text-orange-400">WhatsApp</a>
+            <a href="https://wa.me/543755301413" target="_blank" rel="noreferrer" className="transition hover:text-orange-400">WhatsApp</a>
             <a href="#" className="transition hover:text-orange-400">LinkedIn</a>
             <a href="#" className="transition hover:text-orange-400">Instagram</a>
           </div>
