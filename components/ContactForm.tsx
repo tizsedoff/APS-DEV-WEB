@@ -41,7 +41,17 @@ export function ContactForm() {
     const project = calculatorState?.projectLabel ?? 'No seleccionado';
     const extras = calculatorState?.extrasLabels?.length ? calculatorState.extrasLabels.join(', ') : 'Sin agregados';
     const total = calculatorState?.total != null ? `USD ${calculatorState.total}` : 'No disponible';
-    const body = `Hola APS Developer,%0A%0AQuiero un proyecto:%0AWEB: ${project}%0AAgregados: ${extras}%0ATotal: ${total}%0A%0AMi nombre: ${name || 'No especificado'}%0AEmail: ${email || 'No especificado'}%0AEmpresa: ${company || 'No especificado'}%0AMensaje: ${message || 'No especificado'}`;
+    const body = `Hola APS Developer,
+
+Quiero un proyecto:
+WEB: ${project}
+Agregados: ${extras}
+Total: ${total}
+
+Mi nombre: ${name || 'No especificado'}
+Email: ${email || 'No especificado'}
+Empresa: ${company || 'No especificado'}
+Mensaje: ${message || 'No especificado'}`;
 
     return `https://wa.me/543755301413?text=${encodeURIComponent(body)}`;
   }, [calculatorState, name, email, company, message]);
@@ -50,9 +60,19 @@ export function ContactForm() {
     const project = calculatorState?.projectLabel ?? 'No seleccionado';
     const extras = calculatorState?.extrasLabels?.length ? calculatorState.extrasLabels.join(', ') : 'Sin agregados';
     const total = calculatorState?.total != null ? `USD ${calculatorState.total}` : 'No disponible';
-    const body = `Hola APS Developer,%0A%0AQuiero un proyecto:%0AWEB: ${project}%0AAgregados: ${extras}%0ATotal: ${total}%0A%0AMi nombre: ${name || 'No especificado'}%0AEmail: ${email || 'No especificado'}%0AEmpresa: ${company || 'No especificado'}%0AMensaje: ${message || 'No especificado'}`;
+    const body = `Hola APS Developer,
 
-    return `mailto:tizsedoff@gmail.com?subject=${encodeURIComponent('Contacto desde APS Developer')}&body=${body}`;
+Quiero un proyecto:
+WEB: ${project}
+Agregados: ${extras}
+Total: ${total}
+
+Mi nombre: ${name || 'No especificado'}
+Email: ${email || 'No especificado'}
+Empresa: ${company || 'No especificado'}
+Mensaje: ${message || 'No especificado'}`;
+
+    return `mailto:tizsedoff@gmail.com?subject=${encodeURIComponent('Contacto desde APS Developer')}&body=${encodeURIComponent(body)}`;
   }, [calculatorState, name, email, company, message]);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
